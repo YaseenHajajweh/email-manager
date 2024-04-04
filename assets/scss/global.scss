@@ -1,0 +1,48 @@
+@import './flex';
+@import './variables';
+*,
+*::before,
+*::after {
+  
+  box-sizing: border-box;
+}
+
+// Sets basic styles for the body, like font, background, and color.
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Example font
+  font-size: 16px; // Default font size
+  line-height: 1.5; // Good for readability
+  margin: 0;
+  padding: 0;
+  
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.mt-auto {
+    margin-top: auto;
+}
+.ml-auto {
+    margin-left: auto;
+}
+.mb-0 {
+    margin-bottom: 0px;
+}
+.h-100 {
+    height: 100%;
+}
+.w-100 {
+    width: 100%;
+}
+ul {
+    list-style: none;
+    padding: 0px;
+}
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-light-cyan !important;
+    border-radius: 5px;
+    margin: 0px;
+}
