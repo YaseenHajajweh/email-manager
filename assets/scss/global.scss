@@ -1,5 +1,6 @@
 @import './flex';
 @import './variables';
+@import './_fonts';
 *,
 *::before,
 *::after {
@@ -9,7 +10,7 @@
 
 // Sets basic styles for the body, like font, background, and color.
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Example font
+  font-family: 'Plus_Jakarta_Sans' ,'Cairo' ; 
   font-size: 16px; // Default font size
   line-height: 1.5; // Good for readability
   margin: 0;
