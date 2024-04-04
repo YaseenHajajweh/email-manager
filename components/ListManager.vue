@@ -25,7 +25,7 @@
                         @click="toggleEmailSelection(email.id)">
                 </label>
                 <!-- Email subject, clicking it opens the email in the drawer -->
-                <span class="flex-item" @click="openEmail(email.id)">{{ email.subject }}</span>
+                <span class="flex-item" @click="openEmail(email.id,$route.name)">{{ email.subject }}</span>
             </li>
         </ul>
         <!-- TheDrawer component for displaying the selected email content -->
@@ -116,13 +116,15 @@ const toggleEmailSelection = (emailId) => {
 };
 
 // Function to handle the opening of an email, marking it as read and displaying it in the drawer.
-const openEmail = (emailId) => {
+const openEmail = (emailId,routeName) => {
     const email = emails.value.find(email => email.id === emailId);
     if (email) {
         email.isRead = true;  // Mark as read
         currentEmail.value = email;  // Set for display in the drawer
         isDrawerOpen.value = true;  // Open the drawer
-        emailManagerStore.addToList(emails.value.filter(email => !email.isRead));
+        if (routeName === 'inbox') {
+            emailManagerStore.addToList(emails.value.filter(email => !email.isRead));
+        }
     }
 };
 
